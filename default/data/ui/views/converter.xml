@@ -1,0 +1,41 @@
+<dashboard version="1.1" script="sigma_convert.js" stylesheet="sigma_convert.css" theme="dark">
+  <label>YAML to SPL Converter</label>
+  <fieldset submitButton="false">
+    <input type="text" token="args" depends="$hidden$">
+      <label>field1</label>
+    </input>
+  </fieldset>
+  <row id="sigma">
+    <panel>
+      <html>
+       <div id="sigma_inputs">
+          <div class="form-group">
+  <h2 class="title"> Use existing File/Directory
+  </h2>
+   <div id="select_file"> <label class="file-path-label">Enter File/Directory Location</label>
+            <input type="text" placeholder="File/directory path" class="file-path"/>
+            </div>
+            </div>
+        
+       <div id="submit_button">
+         <button id="convert">Convert</button>
+       </div>
+       </div>
+     </html>
+    </panel>
+  </row>
+  <row id="sigma_table" depends="$args$">
+    <panel>
+      <title>Sigma file to Splunk Query</title>
+      <table>
+        <search>
+          <query>|sid "$form.args$"</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

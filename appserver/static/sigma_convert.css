@@ -1,0 +1,26 @@
+div#sigma .dashboard-panel {
+    background: transparent;
+}
+
+#sigma {
+    position: absolute;
+    /* margin-bottom: 56px; */
+    padding-left: 36%;
+    padding-top: 1%;
+}
+
+#sigma_table {
+    position: absolute;
+    padding: 17%;
+}
+
+.hide-global-filters{
+    display: none;
+}
+
+.dashboard-title{
+    padding-left: 37%;
+    /* padding-bottom: 2%; */
+    margin-top: 4%;
+    margin-bottom: -51px;
+}
